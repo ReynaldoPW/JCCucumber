@@ -49,25 +49,55 @@ public class RecruitmentPage {
     @FindBy(xpath = "//button[normalize-space()='Save']")
     WebElement btnSave;
 
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text']")
+    WebElement successMessage;
 
-    public void recruitmentPage(){
+
+
+    public void clickRecruitment(){
         recruitmentPage.click();
+    }
+    public void clickAddCandidate(){
         buttonAdd.click();
+    }
+    public void inputFirstName(String firstname){
         inputFirstName.sendKeys("Juara");
+    }
+    public void inputMiddleName(String middlename){
         inputMiddleName.sendKeys("Coding");
+    }
+    public void inputLastName(String lastname){
         inputLastName.sendKeys("Bootcamp");
+    }
+    public void inputJobVacancy(String vacancy){
         selectVacancy.sendKeys("Software");
+    }
+    public void inputEmail(String email){
         inputEmail.sendKeys("juaracoding@test.com");
+    }
+    public void inputPassword(String password){
         inputPassword.sendKeys("1234");
+    }
+    public void inputDocument(){
         String pathDoc = "C:\\Users\\Reypau\\Downloads\\New Microsoft Word Document.docx";
         inputDocument.sendKeys(pathDoc);
+    }
+    public void inputKeyword(){
         keywordsJob.sendKeys("Engineer");
+    }
+    public void inputDate(){
         inputDate.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
         inputDate.sendKeys("2023-02-23");
         inputNotes.sendKeys("test");
-        delay(1);
+    }
+    public void checkboxConsentData(){
         checkboxConsentData.click();
+    }
+    public void btnSave(){
         btnSave.click();
+    }
+    public String getTxtSuccessMessage(){
+        return successMessage.getText();
     }
     static void delay(long detik){
         try {
