@@ -10,7 +10,7 @@ public class LoginPage {
     private WebDriver driver;
     public LoginPage(){
         this.driver = DriverSingleton.getDriver();
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//input[@placeholder='Username']")
     WebElement username;
@@ -31,9 +31,6 @@ public class LoginPage {
     @FindBy(xpath = "//a[normalize-space()='Logout']")
     WebElement logoutBtn;
 
-    public String getLoginTitle(){
-        return loginTitle.getText();
-    }
 
     public String getTextDashboard(){
         return txtDashboard.getText();
